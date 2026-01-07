@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marketing and Communication Strategies | Portal</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #1e40af;
+      --secondary: #3b82f6;
+      --accent: #f59e0b;
+      --bg-light: #f1f5f9;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --white: #ffffff;
+      --shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.1);
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* SIDEBAR NAVIGATION */
+    .sidebar {
+      width: 260px;
+      background: var(--primary);
+      color: var(--white);
+      padding: 2rem 1.5rem;
+      position: fixed;
+      height: 100vh;
+      overflow-y: auto;
+    }
+
+    .sidebar h2 { 
+      font-size: 1.2rem; 
+      margin-bottom: 2rem; 
+      border-bottom: 1px solid rgba(255,255,255,0.1); 
+      padding-bottom: 1rem; 
+    }
+    
+    .nav-item {
+      display: flex;
+      align-items: center;
+      padding: 0.8rem 1rem;
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+      transition: 0.3s;
+    }
+
+    .nav-item i { margin-right: 12px; width: 20px; }
+    .nav-item:hover, .nav-item.active { background: rgba(255,255,255,0.1); color: white; }
+
+    .nav-section {
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .nav-section-title {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 0.5rem;
+      padding: 0 1rem;
+    }
+
+    /* MAIN CONTENT AREA */
+    .main-content {
+      margin-left: 260px;
+      flex: 1;
+      padding: 3rem;
+    }
+
+    .header-section { margin-bottom: 3rem; }
+    .header-section h1 { font-size: 2.5rem; color: var(--primary); }
+    .header-section p { color: var(--text-muted); font-size: 1.1rem; }
+
+    /* TOPIC GRID */
+    .topics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .topic-card {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+      border: 1px solid transparent;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .topic-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--secondary);
+    }
+
+    .icon-wrapper {
+      width: 50px;
+      height: 50px;
+      background: var(--bg-light);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      color: var(--primary);
+      font-size: 1.5rem;
+    }
+
+    .topic-card h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+    .topic-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; }
+    
+    .badge {
+      font-size: 0.7rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      background: #e2e8f0;
+      padding: 4px 8px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar { display: none; }
+      .main-content { margin-left: 0; padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <aside class="sidebar">
+    <h2>M&C Strategy</h2>
+    <a href="index.html" class="nav-item active"><i class="fas fa-th-large"></i> Dashboard</a>
+    
+    <div class="nav-section">
+      <div class="nav-section-title">Course Sessions</div>
+      <a href="week1.html" class="nav-item">
+        <i class="fas fa-bullhorn"></i> Session 1: IMC to Brand
+      </a>
+      <a href="week2.html" class="nav-item">
+        <i class="fas fa-chart-line"></i> Session 2: Strategy & Positioning
+      </a>
+      <a href="week3.html" class="nav-item">
+        <i class="fas fa-users"></i> Session 3: Consumer Behaviour
+      </a>
+      <a href="week4.html" class="nav-item">
+        <i class="fas fa-brain"></i> Session 4: Influences & Insights
+      </a>
+      <a href="week5.html" class="nav-item">
+        <i class="fas fa-crosshairs"></i> Session 5: Communication Objectives
+      </a>
+      <a href="week6.html" class="nav-item">
+        <i class="fas fa-chess-knight"></i> Session 6: Brand Positioning
+      </a>
+      <a href="week7.html" class="nav-item">
+        <i class="fas fa-comments"></i> Session 7: Digital WOM
+      </a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <header class="header-section">
+      <p>Academic Year 2026</p>
+      <h1>Marketing and Communication Strategies</h1>
+      <p>Integrated Frameworks & Digital Influence</p>
+    </header>
+
+    <div class="topics-grid">
+      
+      <a href="week1.html" class="topic-card">
+        <div class="badge">Session 1</div>
+        <div class="icon-wrapper"><i class="fas fa-bullhorn"></i></div>
+        <h3>IMC to Brand Management</h3>
+        <p>Understanding brand equity, Keller's pyramid, and digital touchpoints.</p>
+      </a>
+
+      <a href="week2.html" class="topic-card">
+        <div class="badge">Session 2</div>
+        <div class="icon-wrapper"><i class="fas fa-chart-line"></i></div>
+        <h3>Brand Strategy & Positioning</h3>
+        <p>Mission, vision, target audience, and the strategic sweet spot.</p>
+      </a>
+
+      <a href="week3.html" class="topic-card">
+        <div class="badge">Session 3</div>
+        <div class="icon-wrapper"><i class="fas fa-users"></i></div>
+        <h3>Consumer Behaviour</h3>
+        <p>Decision-making process and psychological influences on purchases.</p>
+      </a>
+
+      <a href="week4.html" class="topic-card">
+        <div class="badge">Session 4</div>
+        <div class="icon-wrapper"><i class="fas fa-brain"></i></div>
+        <h3>Influences & Insights</h3>
+        <p>Psychological, social, and cultural factors shaping consumer choices.</p>
+      </a>
+
+      <a href="week5.html" class="topic-card">
+        <div class="badge">Session 5</div>
+        <div class="icon-wrapper"><i class="fas fa-crosshairs"></i></div>
+        <h3>Communication Objectives</h3>
+        <p>Setting SMART goals and defining measurable campaign KPIs.</p>
+      </a>
+
+      <a href="week6.html" class="topic-card">
+        <div class="badge">Session 6</div>
+        <div class="icon-wrapper"><i class="fas fa-chess-knight"></i></div>
+        <h3>Brand Positioning</h3>
+        <p>Perceptual mapping and competitive differentiation strategy.</p>
+      </a>
+
+      <a href="week7.html" class="topic-card">
+        <div class="badge">Session 7</div>
+        <div class="icon-wrapper"><i class="fas fa-comments"></i></div>
+        <h3>Digital Word of Mouth</h3>
+        <p>Electronic WOM, influencer marketing, and social proof dynamics.</p>
+      </a>
+
+    </div>
+  </main>
+
+</body>
+</html>

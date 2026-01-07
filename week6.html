@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 6 – Brand Positioning | Portal</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #1e40af;
+      --secondary: #3b82f6;
+      --accent: #f59e0b;
+      --bg-light: #f1f5f9;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --white: #ffffff;
+      --shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.1);
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* SIDEBAR NAVIGATION */
+    .sidebar {
+      width: 260px;
+      background: var(--primary);
+      color: var(--white);
+      padding: 2rem 1.5rem;
+      position: fixed;
+      height: 100vh;
+      z-index: 1000;
+      overflow-y: auto;
+    }
+
+    .sidebar h2 { font-size: 1.2rem; margin-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1rem; }
+    
+    .nav-item {
+      display: flex; align-items: center; padding: 0.8rem 1rem;
+      color: rgba(255,255,255,0.8); text-decoration: none;
+      border-radius: 8px; margin-bottom: 0.5rem; transition: 0.3s;
+    }
+
+    .nav-item i { margin-right: 12px; width: 20px; }
+    .nav-item:hover, .nav-item.active { background: rgba(255,255,255,0.1); color: white; }
+
+    .nav-section { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); }
+    .nav-section-title { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.5); margin-bottom: 0.5rem; padding: 0 1rem; }
+
+    /* MAIN CONTENT AREA */
+    .main-content { margin-left: 260px; flex: 1; padding: 3rem; }
+    .header-section { margin-bottom: 2.5rem; }
+    .header-section .breadcrumb { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; font-weight: bold; margin-bottom: 0.5rem; }
+    .header-section h1 { font-size: 2.2rem; color: var(--primary); }
+
+    /* CONTENT SECTIONS */
+    .content-card { background: var(--white); padding: 2.5rem; border-radius: 16px; box-shadow: var(--shadow); margin-bottom: 2rem; }
+    .content-card h2 { color: var(--primary); margin-bottom: 1.5rem; font-size: 1.5rem; display: flex; align-items: center; gap: 10px; }
+    .content-card h3 { margin-top: 1.5rem; color: var(--text-main); font-size: 1.2rem; margin-bottom: 0.8rem; }
+    .content-card p { color: var(--text-muted); line-height: 1.7; margin-bottom: 1rem; }
+    .content-card ul { padding-left: 1.5rem; color: var(--text-muted); margin-bottom: 1rem; }
+    .content-card li { margin-bottom: 0.8rem; line-height: 1.6; }
+
+    /* POSITIONING GRID */
+    .comparison-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+    .comparison-box { background: var(--bg-light); padding: 1.5rem; border-radius: 12px; border-top: 4px solid var(--secondary); }
+    .comparison-box h4 { color: var(--primary); margin-bottom: 0.8rem; }
+
+    .formula-box { background: #eff6ff; border-left: 5px solid var(--secondary); padding: 2rem; border-radius: 12px; margin: 1.5rem 0; font-family: 'Courier New', monospace; line-height: 1.8; }
+    .formula-box span { color: var(--primary); font-weight: bold; background: #dbeafe; padding: 2px 6px; border-radius: 4px; }
+
+    .highlight-box { background: #fef3c7; border-left: 5px solid var(--accent); padding: 1.5rem; border-radius: 12px; margin: 1.5rem 0; }
+    .takeaway-box { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); padding: 2rem; border-radius: 12px; border-left: 5px solid #22c55e; }
+
+    /* TABLE STYLE */
+    .table-container { overflow-x: auto; margin: 1.5rem 0; }
+    table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; }
+    th { background: #f8fafc; color: var(--primary); text-align: left; padding: 1rem; border-bottom: 2px solid #e2e8f0; }
+    td { padding: 1rem; border-bottom: 1px solid #f1f5f9; color: var(--text-muted); }
+
+    /* NAVIGATION BUTTONS */
+    .session-nav { display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem; }
+    .nav-button { display: flex; align-items: center; gap: 0.5rem; padding: 1rem 1.5rem; background: var(--primary); color: var(--white); text-decoration: none; border-radius: 8px; transition: all 0.3s; font-weight: 500; }
+    .nav-button:hover { background: var(--secondary); transform: translateY(-2px); }
+
+    @media (max-width: 768px) { .sidebar { display: none; } .main-content { margin-left: 0; padding: 1.5rem; } }
+  </style>
+</head>
+<body>
+
+  <aside class="sidebar">
+    <h2>M&C Strategy</h2>
+    <a href="index.html" class="nav-item"><i class="fas fa-th-large"></i> Dashboard</a>
+    
+    <div class="nav-section">
+      <div class="nav-section-title">Course Sessions</div>
+      <a href="week1.html" class="nav-item"><i class="fas fa-bullhorn"></i> Session 1</a>
+      <a href="week2.html" class="nav-item"><i class="fas fa-chart-line"></i> Session 2</a>
+      <a href="week3.html" class="nav-item"><i class="fas fa-users"></i> Session 3</a>
+      <a href="week4.html" class="nav-item"><i class="fas fa-brain"></i> Session 4</a>
+      <a href="week5.html" class="nav-item"><i class="fas fa-crosshairs"></i> Session 5</a>
+      <a href="week6.html" class="nav-item active"><i class="fas fa-chess-knight"></i> Session 6: Brand Positioning</a>
+      <a href="week7.html" class="nav-item"><i class="fas fa-share-nodes"></i> Session 7</a>
+      <a href="week8.html" class="nav-item"><i class="fas fa-award"></i> Session 8</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    
+    <header class="header-section">
+      <div class="breadcrumb">Session 06 • Owning the Mindshare</div>
+      <h1>Brand Positioning</h1>
+    </header>
+
+    <section class="content-card">
+      <h2><i class="fas fa-comments"></i> Discussion Starter</h2>
+      <div class="highlight-box" style="background: #eff6ff; border-left-color: var(--secondary);">
+        <p><strong>“Why do people think of Volvo as ‘safe’, Nike as ‘motivational’, and Apple as ‘innovative’—even before seeing an ad?”</strong></p>
+      </div>
+      <p>Positioning is the space a brand owns in the consumer’s mind. It is not what the brand says—it is what consumers <strong>remember</strong> and <strong>associate</strong>. 📌 <em>Positioning is perception, not intention.</em></p>
+    </section>
+
+    <section class="content-card">
+      <h2><i class="fas fa-balance-scale"></i> Strategic Concepts</h2>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Concept</th>
+              <th>Focus</th>
+              <th>Controlled By</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Brand Identity</strong></td>
+              <td>What the brand wants to be</td>
+              <td>Internal Management</td>
+            </tr>
+            <tr>
+              <td><strong>Brand Image</strong></td>
+              <td>What consumers currently think</td>
+              <td>External Perception</td>
+            </tr>
+            <tr>
+              <td><strong>Brand Positioning</strong></td>
+              <td>The intended competitive meaning</td>
+              <td>The "Bridge" Strategy</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="content-card">
+      <h2><i class="fas fa-chess"></i> Elements of Effective Positioning</h2>
+      
+      
+
+      <div class="comparison-grid">
+        <div class="comparison-box">
+          <h4>Target Audience</h4>
+          <p>Who is it for? You cannot position a brand for "everyone."</p>
+        </div>
+        <div class="comparison-box">
+          <h4>Frame of Reference</h4>
+          <p>The category. (e.g., Is Uber a taxi service or a tech platform?)</p>
+        </div>
+        <div class="comparison-box">
+          <h4>Point of Difference</h4>
+          <p>Functional or emotional benefits that make you meaningfully unique.</p>
+        </div>
+        <div class="comparison-box">
+          <h4>Reason to Believe</h4>
+          <p>The proof points (Heritage, Reviews, Technology) that make the claim credible.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-card">
+      <h2><i class="fas fa-pen-nib"></i> The Positioning Statement</h2>
+      <p>A clear internal guide for every marketing decision:</p>
+      <div class="formula-box">
+        For <span>[Target Audience]</span>,<br>
+        <span>[Brand Name]</span> is the <span>[Frame of Reference]</span><br>
+        that <span>[Point of Difference]</span>,<br>
+        because <span>[Reason to Believe]</span>.
+      </div>
+      <div class="highlight-box">
+        <strong>Example (Uber):</strong> For urban professionals, Uber is a ride-hailing platform that provides fast and reliable transportation, because it uses smart technology and real-time tracking.
+      </div>
+    </section>
+
+    <section class="content-card">
+      <h2><i class="fas fa-mobile-alt"></i> Positioning in the Digital Age</h2>
+      <p>In digital, <strong>experience IS positioning</strong>. Your brand is positioned by:</p>
+      <ul>
+        <li><strong>Website UX/UI:</strong> Does it feel "premium" or "cheap"?</li>
+        <li><strong>Tone of Notifications:</strong> Is it "friendly" or "aggressive"?</li>
+        <li><strong>Social Voice:</strong> Does the brand sound like a person or a corporation?</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2><i class="fas fa-lightbulb"></i> Key Takeaways</h2>
+      <div class="takeaway-box">
+        <ul style="color: var(--text-main);">
+          <li><strong>Owning an Idea:</strong> Successful brands choose focus over flexibility.</li>
+          <li><strong>Shortcuts:</strong> Consumers use positioning as a mental shortcut to make faster decisions.</li>
+          <li><strong>Credibility:</strong> Without a "Reason to Believe," positioning is just an empty claim.</li>
+          <li><strong>Consistency:</strong> Positioning must be identical across all IMC touchpoints to take root.</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="session-nav">
+      <a href="week5.html" class="nav-button">
+        <i class="fas fa-arrow-left"></i> Previous Session
+      </a>
+      <a href="week7.html" class="nav-button">
+        Next Session <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+
+  </main>
+
+</body>
+</html>
