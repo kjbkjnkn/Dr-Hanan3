@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 10 – Final Presentations | Portal</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #1e40af; --secondary: #3b82f6; --accent: #10b981;
+      --bg-light: #f1f5f9; --text-main: #0f172a; --text-muted: #64748b;
+      --white: #ffffff; --shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.1);
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); color: var(--text-main); display: flex; min-height: 100vh; }
+    
+    /* SIDEBAR NAVIGATION */
+    .sidebar { width: 260px; background: var(--primary); color: var(--white); padding: 2rem 1.5rem; position: fixed; height: 100vh; z-index: 1000; overflow-y: auto; }
+    .sidebar h2 { font-size: 1.2rem; margin-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1rem; }
+    .nav-item { display: flex; align-items: center; padding: 0.8rem 1rem; color: rgba(255,255,255,0.8); text-decoration: none; border-radius: 8px; margin-bottom: 0.5rem; transition: 0.3s; font-size: 0.9rem; }
+    .nav-item i { margin-right: 12px; width: 20px; }
+    .nav-item:hover, .nav-item.active { background: rgba(255,255,255,0.1); color: white; }
+    .nav-section { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); }
+    .nav-section-title { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.5); margin-bottom: 0.5rem; padding: 0 1rem; }
+
+    /* MAIN CONTENT */
+    .main-content { margin-left: 260px; flex: 1; padding: 3rem; }
+    .header-section { margin-bottom: 2.5rem; }
+    .header-section .breadcrumb { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; font-weight: bold; margin-bottom: 0.5rem; }
+    .header-section h1 { font-size: 2.2rem; color: var(--primary); }
+
+    /* CAPSTONE CARDS */
+    .content-card { background: var(--white); padding: 2.5rem; border-radius: 16px; box-shadow: var(--shadow); margin-bottom: 2rem; }
+    .content-card h2 { color: var(--primary); margin-bottom: 1.2rem; font-size: 1.4rem; display: flex; align-items: center; gap: 10px; }
+    
+    .final-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; }
+    .dimension-box { border: 1px solid #e2e8f0; padding: 1.5rem; border-radius: 12px; transition: 0.3s; }
+    .dimension-box:hover { border-color: var(--secondary); background: #f8fafc; }
+    .dimension-box h4 { color: var(--primary); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+    .dimension-box ul { list-style: none; font-size: 0.85rem; color: var(--text-muted); }
+    .dimension-box li { margin-bottom: 5px; }
+    .dimension-box li::before { content: "•"; color: var(--secondary); font-weight: bold; margin-right: 8px; }
+
+    .feedback-framework { background: #f0fdf4; border: 2px solid var(--accent); padding: 2rem; border-radius: 16px; }
+    .feedback-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1rem; }
+    .feedback-item { background: white; padding: 1rem; border-radius: 8px; text-align: center; font-weight: 600; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+
+    .wrap-up { background: linear-gradient(135deg, var(--primary), #1e3a8a); color: white; padding: 2.5rem; border-radius: 16px; text-align: center; }
+
+    /* BUTTONS */
+    .session-nav { display: flex; justify-content: space-between; margin-top: 3rem; }
+    .nav-button { display: flex; align-items: center; gap: 0.5rem; padding: 1rem 1.8rem; background: var(--primary); color: white; text-decoration: none; border-radius: 10px; transition: 0.3s; font-weight: 600; }
+    .nav-button:hover { background: var(--secondary); transform: translateY(-2px); }
+  </style>
+</head>
+<body>
+
+  <aside class="sidebar">
+    <h2>M&C Strategy</h2>
+    <a href="index.html" class="nav-item"><i class="fas fa-th-large"></i> Dashboard</a>
+    <div class="nav-section">
+      <div class="nav-section-title">Course Roadmap</div>
+      <a href="week1.html" class="nav-item"><i class="fas fa-bullhorn"></i> Session 1</a>
+      <a href="week5.html" class="nav-item"><i class="fas fa-microphone-alt"></i> Session 5</a>
+      <a href="week9.html" class="nav-item"><i class="fas fa-shield-virus"></i> Session 9</a>
+      <a href="week10.html" class="nav-item active"><i class="fas fa-trophy"></i> Session 10: Final</a>
+      <a href="final.html" class="nav-item"><i class="fas fa-award"></i> Course Certificate</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <header class="header-section">
+      <div class="breadcrumb">Capstone Module • Final Presentation</div>
+      <h1>Brand Strategy Final Pitch</h1>
+    </header>
+
+    <section class="content-card">
+      <h2><i class="fas fa-graduation-cap"></i> Workshop Purpose</h2>
+      <p>Demonstrate the integration of <strong>strategy, creativity, digital execution, and measurement</strong> into a cohesive brand system developed throughout the course.</p>
+    </section>
+
+    <section class="content-card">
+      <h2><i class="fas fa-list-check"></i> Pitch Requirements (4 Dimensions)</h2>
+      <div class="final-grid">
+        <div class="dimension-box">
+          <h4><i class="fas fa-chess"></i> 1. Strategy</h4>
+          <ul>
+            <li>Positioning Statement</li>
+            <li>Target Audience</li>
+            <li>Consumer Insight</li>
+          </ul>
+        </div>
+        <div class="dimension-box">
+          <h4><i class="fas fa-palette"></i> 2. Identity</h4>
+          <ul>
+            <li>Logo Draft/Sketch</li>
+            <li>Color Rationale</li>
+            <li>Digital Adaptability</li>
+          </ul>
+        </div>
+        <div class="dimension-box">
+          <h4><i class="fas fa-laptop-code"></i> 3. Digital</h4>
+          <ul>
+            <li>Hero Content Piece</li>
+            <li>Channel Role Strategy</li>
+            <li>Execution Mockup</li>
+          </ul>
+        </div>
+        <div class="dimension-box">
+          <h4><i class="fas fa-chart-line"></i> 4. Metrics</h4>
+          <ul>
+            <li>Success KPIs</li>
+            <li>Tracking Methods</li>
+            <li>Logic of Evaluation</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-card feedback-framework">
+      <h2><i class="fas fa-comments"></i> Peer Review Framework</h2>
+      <p>Analyze presentations using the <strong>"I Like, I Wish, I Wonder"</strong> model to provide constructive strategic critique.</p>
+      <div class="feedback-grid">
+        <div class="feedback-item" style="color: #16a34a;">I Like (Strong Point)</div>
+        <div class="feedback-item" style="color: #ea580c;">I Wish (Improvement)</div>
+        <div class="feedback-item" style="color: #2563eb;">I Wonder (Question)</div>
+      </div>
+    </section>
+
+    <section class="wrap-up">
+      <h2 style="color: white; margin-bottom: 1rem;">Course Wrap-Up Insight</h2>
+      <p style="opacity: 0.9; max-width: 800px; margin: 0 auto;">
+        Strong brands are <strong>systems</strong>, not just campaigns. Consistency builds trust, creativity must be rooted in strategy, and measurement completes the loop. You are now ready to think like a strategist, act like a digital native, and lead as a brand visionary.
+      </p>
+    </section>
+
+    <div class="session-nav">
+      <a href="week9.html" class="nav-button"><i class="fas fa-arrow-left"></i> Session 9</a>
+      <a href="final.html" class="nav-button" style="background: var(--accent);">Course Complete <i class="fas fa-check-double"></i></a>
+    </div>
+  </main>
+
+</body>
+</html>
