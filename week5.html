@@ -3,94 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Session 5 – Communication Objectives | Portal</title>
-  
+  <title>Session 5 – Brand Voice & Content | Portal</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
   <style>
     :root {
-      --primary: #1e40af;
-      --secondary: #3b82f6;
-      --accent: #f59e0b;
-      --bg-light: #f1f5f9;
-      --text-main: #0f172a;
-      --text-muted: #64748b;
-      --white: #ffffff;
-      --shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.1);
+      --primary: #1e40af; --secondary: #3b82f6; --accent: #f59e0b;
+      --bg-light: #f1f5f9; --text-main: #0f172a; --text-muted: #64748b;
+      --white: #ffffff; --shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.1);
     }
-
     * { margin:0; padding:0; box-sizing:border-box; }
-
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: var(--bg-light);
-      color: var(--text-main);
-      display: flex;
-      min-height: 100vh;
-    }
-
-    /* SIDEBAR NAVIGATION */
-    .sidebar {
-      width: 260px;
-      background: var(--primary);
-      color: var(--white);
-      padding: 2rem 1.5rem;
-      position: fixed;
-      height: 100vh;
-      z-index: 1000;
-      overflow-y: auto;
-    }
-
-    .sidebar h2 { font-size: 1.2rem; margin-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1rem; }
+    body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); color: var(--text-main); display: flex; min-height: 100vh; }
     
-    .nav-item {
-      display: flex; align-items: center; padding: 0.8rem 1rem;
-      color: rgba(255,255,255,0.8); text-decoration: none;
-      border-radius: 8px; margin-bottom: 0.5rem; transition: 0.3s;
-    }
-
+    /* SIDEBAR NAVIGATION */
+    .sidebar { width: 260px; background: var(--primary); color: var(--white); padding: 2rem 1.5rem; position: fixed; height: 100vh; z-index: 1000; overflow-y: auto; }
+    .sidebar h2 { font-size: 1.2rem; margin-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1rem; }
+    .nav-item { display: flex; align-items: center; padding: 0.8rem 1rem; color: rgba(255,255,255,0.8); text-decoration: none; border-radius: 8px; margin-bottom: 0.5rem; transition: 0.3s; font-size: 0.9rem; }
     .nav-item i { margin-right: 12px; width: 20px; }
     .nav-item:hover, .nav-item.active { background: rgba(255,255,255,0.1); color: white; }
-
     .nav-section { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); }
     .nav-section-title { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.5); margin-bottom: 0.5rem; padding: 0 1rem; }
 
-    /* MAIN CONTENT AREA */
+    /* MAIN CONTENT */
     .main-content { margin-left: 260px; flex: 1; padding: 3rem; }
     .header-section { margin-bottom: 2.5rem; }
     .header-section .breadcrumb { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; font-weight: bold; margin-bottom: 0.5rem; }
     .header-section h1 { font-size: 2.2rem; color: var(--primary); }
 
-    /* CONTENT SECTIONS */
+    /* CONTENT CARDS */
     .content-card { background: var(--white); padding: 2.5rem; border-radius: 16px; box-shadow: var(--shadow); margin-bottom: 2rem; }
     .content-card h2 { color: var(--primary); margin-bottom: 1.5rem; font-size: 1.5rem; display: flex; align-items: center; gap: 10px; }
-    .content-card h3 { margin-top: 1.5rem; color: var(--text-main); font-size: 1.2rem; margin-bottom: 0.8rem; }
-    .content-card p { color: var(--text-muted); line-height: 1.7; margin-bottom: 1rem; }
-    .content-card ul { padding-left: 1.5rem; color: var(--text-muted); margin-bottom: 1rem; }
-    .content-card li { margin-bottom: 0.8rem; line-height: 1.6; }
+    .content-card h3 { color: var(--text-main); margin-bottom: 1rem; font-size: 1.2rem; border-left: 4px solid var(--secondary); padding-left: 10px; }
+    
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; }
+    .info-box { background: var(--bg-light); padding: 1.5rem; border-radius: 12px; height: 100%; border-top: 4px solid var(--secondary); }
+    .info-box h4 { margin-bottom: 10px; color: var(--primary); }
 
-    /* OBJECTIVE BOXES */
-    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
-    .obj-box { padding: 1.5rem; border-radius: 12px; border: 1px solid #e2e8f0; }
-    .obj-box.marketing { border-left: 5px solid #ef4444; background: #fff1f2; }
-    .obj-box.comm { border-left: 5px solid var(--secondary); background: #eff6ff; }
-    .obj-box h4 { margin-bottom: 1rem; color: var(--text-main); font-size: 1.1rem; }
+    .highlight-box { background: #eff6ff; border-left: 5px solid var(--secondary); padding: 1.5rem; border-radius: 12px; margin: 1.5rem 0; }
+    .activity-card { background: #fdf2f8; border: 1px dashed #db2777; padding: 2rem; border-radius: 16px; }
 
-    .highlight-box { background: #fef3c7; border-left: 5px solid var(--accent); padding: 1.5rem; border-radius: 12px; margin: 1.5rem 0; }
-    .takeaway-box { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); padding: 2rem; border-radius: 12px; border-left: 5px solid #22c55e; }
-
-    /* TABLE STYLE */
-    .table-container { overflow-x: auto; margin: 1.5rem 0; }
-    table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; }
-    th { background: #f8fafc; color: var(--primary); text-align: left; padding: 1rem; border-bottom: 2px solid #e2e8f0; }
-    td { padding: 1rem; border-bottom: 1px solid #f1f5f9; color: var(--text-muted); }
-
-    /* NAVIGATION BUTTONS */
-    .session-nav { display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem; }
-    .nav-button { display: flex; align-items: center; gap: 0.5rem; padding: 1rem 1.5rem; background: var(--primary); color: var(--white); text-decoration: none; border-radius: 8px; transition: all 0.3s; font-weight: 500; }
+    /* BUTTONS */
+    .session-nav { display: flex; justify-content: space-between; margin-top: 3rem; }
+    .nav-button { display: flex; align-items: center; gap: 0.5rem; padding: 1rem 1.8rem; background: var(--primary); color: white; text-decoration: none; border-radius: 10px; transition: 0.3s; font-weight: 600; }
     .nav-button:hover { background: var(--secondary); transform: translateY(-2px); }
-
-    @media (max-width: 768px) { .sidebar { display: none; } .main-content { margin-left: 0; padding: 1.5rem; } }
   </style>
 </head>
 <body>
@@ -98,138 +52,116 @@
   <aside class="sidebar">
     <h2>M&C Strategy</h2>
     <a href="index.html" class="nav-item"><i class="fas fa-th-large"></i> Dashboard</a>
-    
     <div class="nav-section">
-      <div class="nav-section-title">Course Sessions</div>
+      <div class="nav-section-title">Course Roadmap</div>
       <a href="week1.html" class="nav-item"><i class="fas fa-bullhorn"></i> Session 1</a>
       <a href="week2.html" class="nav-item"><i class="fas fa-chart-line"></i> Session 2</a>
-      <a href="week3.html" class="nav-item"><i class="fas fa-users"></i> Session 3</a>
-      <a href="week4.html" class="nav-item"><i class="fas fa-brain"></i> Session 4</a>
-      <a href="week5.html" class="nav-item active"><i class="fas fa-crosshairs"></i> Session 5: Communication Objectives</a>
+      <a href="week3.html" class="nav-item"><i class="fas fa-sitemap"></i> Session 3</a>
+      <a href="week4.html" class="nav-item"><i class="fas fa-palette"></i> Session 4</a>
+      <a href="week5.html" class="nav-item active"><i class="fas fa-microphone-alt"></i> Session 5: Voice & Content</a>
       <a href="week6.html" class="nav-item"><i class="fas fa-chess-knight"></i> Session 6</a>
-      <a href="week7.html" class="nav-item"><i class="fas fa-share-nodes"></i> Session 7</a>
-      <a href="week8.html" class="nav-item"><i class="fas fa-award"></i> Session 8</a>
+      <a href="week7.html" class="nav-item"><i class="fas fa-comments"></i> Session 7</a>
+      <a href="week8.html" class="nav-item"><i class="fas fa-bullseye"></i> Session 8</a>
+      <a href="week9.html" class="nav-item"><i class="fas fa-layer-group"></i> Session 9</a>
+      <a href="week10.html" class="nav-item"><i class="fas fa-chart-bar"></i> Session 10</a>
+      <a href="final.html" class="nav-item"><i class="fas fa-award"></i> Final Presentation</a>
     </div>
   </aside>
 
   <main class="main-content">
-    
     <header class="header-section">
-      <div class="breadcrumb">Session 05 • Setting Strategic Goals</div>
-      <h1>Communication Objectives</h1>
+      <div class="breadcrumb">Module 05 • Verbal Strategy</div>
+      <h1>Brand Voice & Content Strategy</h1>
     </header>
 
     <section class="content-card">
-      <h2><i class="fas fa-comments"></i> Discussion Starter</h2>
-      <div class="highlight-box" style="background: #eff6ff; border-left-color: var(--secondary);">
-        <p><strong>“If a campaign gets millions of views but no one remembers the brand, was it successful?”</strong></p>
-      </div>
-      <p>Communication objectives define what the brand wants to change in the <strong>consumer’s mind</strong>. While sales are the result, communication focuses on awareness, perception, and attitude.</p>
+      <h2><i class="fas fa-comment-dots"></i> Session Focus</h2>
+      <p>Defining and managing verbal communication across digital platforms to ensure emotional resonance and strategic alignment with brand positioning.</p>
     </section>
 
     <section class="content-card">
-      <h2><i class="fas fa-balance-scale"></i> Marketing vs. Communication</h2>
-      <div class="grid-2">
-        <div class="obj-box marketing">
-          <h4><i class="fas fa-chart-line"></i> Marketing Objectives</h4>
-          <p>Focus on business outcomes:</p>
-          <ul>
-            <li>Increase sales / Revenue</li>
-            <li>Grow market share</li>
-            <li>Enter new territories</li>
-          </ul>
-        </div>
-        <div class="obj-box comm">
-          <h4><i class="fas fa-comment-dots"></i> Communication Objectives</h4>
-          <p>Focus on consumer mindset:</p>
-          <ul>
-            <li>Increase brand awareness</li>
-            <li>Improve brand trust</li>
-            <li>Change negative perceptions</li>
-          </ul>
-        </div>
-      </div>
+      <h2><i class="fas fa-bullhorn"></i> 1. Voice vs. Tone</h2>
+      <p>While <strong>Voice</strong> is the permanent personality of the brand, <strong>Tone</strong> is the emotional inflection adapted for context.</p>
       <div class="highlight-box">
-        <strong>Strategic Insight:</strong> Communication objectives support marketing objectives. If you don't know what you want to change in the mind, your message will fail.
+        <strong>The Persona Question:</strong> "If the brand were a person, how would it speak?"
+      </div>
+      <div class="grid-3">
+        <div class="info-box">
+          <h4>Customer Support</h4>
+          <p>Tone: Calm, reassuring, and solution-oriented.</p>
+        </div>
+        <div class="info-box">
+          <h4>Product Launch</h4>
+          <p>Tone: Energetic, inspiring, and bold.</p>
+        </div>
+        <div class="info-box">
+          <h4>Policy Updates</h4>
+          <p>Tone: Clear, transparent, and direct.</p>
+        </div>
       </div>
     </section>
 
     <section class="content-card">
-      <h2><i class="fas fa-layer-group"></i> Types of Communication Objectives</h2>
-      <p>Following the <strong>Hierarchy of Effects Model</strong>:</p>
-
+      <h2><i class="fas fa-masks-theater"></i> 2. Brand Archetypes</h2>
+      <p>Archetypes provide a psychological framework for language choice and humor levels.</p>
       
-
-      <div class="table-container">
-        <table>
-          <thead>
-            <tr>
-              <th>Type</th>
-              <th>The Core Question</th>
-              <th>Example Objective</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Awareness</strong></td>
-              <td>Do they know us?</td>
-              <td>Increase brand recall by 30%</td>
-            </tr>
-            <tr>
-              <td><strong>Knowledge</strong></td>
-              <td>Do they understand us?</td>
-              <td>Explain a new app feature to 1M users</td>
-            </tr>
-            <tr>
-              <td><strong>Attitude</strong></td>
-              <td>How do they feel about us?</td>
-              <td>Position brand as "Safety-First"</td>
-            </tr>
-            <tr>
-              <td><strong>Action</strong></td>
-              <td>Will they act?</td>
-              <td>Drive 50,000 free trial sign-ups</td>
-            </tr>
-            <tr>
-              <td><strong>Loyalty</strong></td>
-              <td>Will they stay?</td>
-              <td>Increase repeat purchase rate by 15%</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="grid-3">
+        <div class="info-box" style="border-top-color: #f59e0b;">
+          <h4>The Jester</h4>
+          <p>Style: Casual, humorous, irreverent.</p>
+          <p><em>Fit: TikTok, X, Reels.</em></p>
+        </div>
+        <div class="info-box" style="border-top-color: #10b981;">
+          <h4>The Sage</h4>
+          <p>Style: Wise, educational, thoughtful.</p>
+          <p><em>Fit: LinkedIn, Whitepapers.</em></p>
+        </div>
+        <div class="info-box" style="border-top-color: #ef4444;">
+          <h4>The Hero</h4>
+          <p>Style: Bold, confident, motivational.</p>
+          <p><em>Fit: Launch Videos, Manifestos.</em></p>
+        </div>
       </div>
     </section>
 
     <section class="content-card">
-      <h2><i class="fas fa-vial"></i> SMART Framework</h2>
-      <p>Effective objectives must be Specific, Measurable, Achievable, Relevant, and Time-bound.</p>
+      <h2><i class="fas fa-calendar-alt"></i> 3. Content Strategy & Planning</h2>
+      <p>A content strategy connects brand identity with published output through <strong>Editorial Calendars</strong>.</p>
       <div class="highlight-box">
-        <strong>Bad Objective:</strong> "Get more people to like our Facebook page."<br>
-        <strong>SMART Objective:</strong> "Increase engagement rate on Instagram by 10% among users aged 18-25 over the next 3 months."
+        <strong>Micro vs. Macro Content:</strong>
+        <p style="margin-top:10px;">Micro-content (TikTok/Tweets) prioritizes <strong>Attention</strong>. Macro-content (Blogs/Whitepapers) prioritizes <strong>Trust and Depth</strong>.</p>
       </div>
     </section>
 
-    <section class="content-card">
-      <h2><i class="fas fa-lightbulb"></i> Key Takeaways</h2>
-      <div class="takeaway-box">
-        <ul style="color: var(--text-main);">
-          <li><strong>Mindset over Sales:</strong> Objectives define what should change in the consumer's brain.</li>
-          <li><strong>Journey Mapping:</strong> Objectives must match the consumer's current stage (Awareness vs. Action).</li>
-          <li><strong>Precision:</strong> Digital channels allow us to measure specific behaviors (bounce rate, completion rate).</li>
-          <li><strong>Clarity:</strong> Clear objectives prevent wasted budget and inconsistent messaging.</li>
-        </ul>
+    <section class="content-card activity-card">
+      <h2><i class="fas fa-language"></i> Activity: The Translator (15 mins)</h2>
+      <p><strong>Brief:</strong> Translate the corporate statement <em>"We are updating our privacy policy"</em> into three archetypes:</p>
+      <div class="grid-3" style="margin-top: 1.5rem;">
+        <div style="background: white; padding: 1rem; border-radius: 8px;">
+          <strong>Jester:</strong> "Cleaning up our policy so it's way less boring."
+        </div>
+        <div style="background: white; padding: 1rem; border-radius: 8px;">
+          <strong>Sage:</strong> "Ensuring greater transparency in data handling."
+        </div>
+        <div style="background: white; padding: 1rem; border-radius: 8px;">
+          <strong>Hero:</strong> "Reinforcing our commitment to your trust."
+        </div>
       </div>
+    </section>
+
+    <section class="content-card" style="background: var(--primary); color: white;">
+      <h2 style="color: white;"><i class="fas fa-key"></i> Key Takeaways</h2>
+      <ul style="list-style: none; padding-top: 10px;">
+        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="margin-right: 10px;"></i> Brand voice is a long-term strategic asset.</li>
+        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="margin-right: 10px;"></i> Tone adapts to platform emotion; voice remains consistent.</li>
+        <li><i class="fas fa-check-circle" style="margin-right: 10px;"></i> Editorial calendars ensure strategic use of content pillars.</li>
+      </ul>
     </section>
 
     <div class="session-nav">
-      <a href="week4.html" class="nav-button">
-        <i class="fas fa-arrow-left"></i> Previous Session
-      </a>
-      <a href="week6.html" class="nav-button">
-        Next Session <i class="fas fa-arrow-right"></i>
-      </a>
+      <a href="week4.html" class="nav-button"><i class="fas fa-arrow-left"></i> Session 4</a>
+      <a href="week6.html" class="nav-button">Session 6 <i class="fas fa-arrow-right"></i></a>
     </div>
-
   </main>
 
 </body>
