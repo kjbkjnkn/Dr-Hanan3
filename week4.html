@@ -3,95 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Session 4 – Influences & Insights | Portal</title>
-  
+  <title>Session 4 – Brand Identity | Portal</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
   <style>
     :root {
-      --primary: #1e40af;
-      --secondary: #3b82f6;
-      --accent: #f59e0b;
-      --bg-light: #f1f5f9;
-      --text-main: #0f172a;
-      --text-muted: #64748b;
-      --white: #ffffff;
-      --shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.1);
+      --primary: #1e40af; --secondary: #3b82f6; --accent: #f59e0b;
+      --bg-light: #f1f5f9; --text-main: #0f172a; --text-muted: #64748b;
+      --white: #ffffff; --shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.1);
     }
-
     * { margin:0; padding:0; box-sizing:border-box; }
-
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: var(--bg-light);
-      color: var(--text-main);
-      display: flex;
-      min-height: 100vh;
-    }
-
-    /* SIDEBAR NAVIGATION */
-    .sidebar {
-      width: 260px;
-      background: var(--primary);
-      color: var(--white);
-      padding: 2rem 1.5rem;
-      position: fixed;
-      height: 100vh;
-      z-index: 1000;
-      overflow-y: auto;
-    }
-
-    .sidebar h2 { font-size: 1.2rem; margin-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1rem; }
+    body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); color: var(--text-main); display: flex; min-height: 100vh; }
     
-    .nav-item {
-      display: flex; align-items: center; padding: 0.8rem 1rem;
-      color: rgba(255,255,255,0.8); text-decoration: none;
-      border-radius: 8px; margin-bottom: 0.5rem; transition: 0.3s;
-    }
-
+    /* SIDEBAR NAVIGATION */
+    .sidebar { width: 260px; background: var(--primary); color: var(--white); padding: 2rem 1.5rem; position: fixed; height: 100vh; z-index: 1000; overflow-y: auto; }
+    .sidebar h2 { font-size: 1.2rem; margin-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1rem; }
+    .nav-item { display: flex; align-items: center; padding: 0.8rem 1rem; color: rgba(255,255,255,0.8); text-decoration: none; border-radius: 8px; margin-bottom: 0.5rem; transition: 0.3s; font-size: 0.9rem; }
     .nav-item i { margin-right: 12px; width: 20px; }
     .nav-item:hover, .nav-item.active { background: rgba(255,255,255,0.1); color: white; }
-
     .nav-section { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); }
     .nav-section-title { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.5); margin-bottom: 0.5rem; padding: 0 1rem; }
 
-    /* MAIN CONTENT AREA */
+    /* MAIN CONTENT */
     .main-content { margin-left: 260px; flex: 1; padding: 3rem; }
     .header-section { margin-bottom: 2.5rem; }
     .header-section .breadcrumb { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; font-weight: bold; margin-bottom: 0.5rem; }
     .header-section h1 { font-size: 2.2rem; color: var(--primary); }
 
-    /* CONTENT SECTIONS */
+    /* CONTENT CARDS */
     .content-card { background: var(--white); padding: 2.5rem; border-radius: 16px; box-shadow: var(--shadow); margin-bottom: 2rem; }
     .content-card h2 { color: var(--primary); margin-bottom: 1.5rem; font-size: 1.5rem; display: flex; align-items: center; gap: 10px; }
-    .content-card h3 { margin-top: 1.5rem; color: var(--text-main); font-size: 1.2rem; margin-bottom: 0.8rem; }
-    .content-card p { color: var(--text-muted); line-height: 1.7; margin-bottom: 1rem; }
-    .content-card ul { padding-left: 1.5rem; color: var(--text-muted); margin-bottom: 1rem; }
-    .content-card li { margin-bottom: 0.8rem; line-height: 1.6; }
+    .content-card h3 { color: var(--text-main); margin-bottom: 1rem; font-size: 1.2rem; border-left: 4px solid var(--secondary); padding-left: 10px; }
+    
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; }
+    .info-box { background: var(--bg-light); padding: 1.5rem; border-radius: 12px; height: 100%; }
+    .info-box ul { list-style: none; padding-top: 10px; }
+    .info-box li { margin-bottom: 8px; color: var(--text-muted); font-size: 0.95rem; }
+    .info-box li i { color: var(--secondary); margin-right: 8px; }
 
-    /* BOXES & GRIDS */
-    .comparison-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
-    .comparison-box { background: var(--bg-light); padding: 1.5rem; border-radius: 12px; border-top: 4px solid var(--secondary); }
-    .comparison-box h4 { color: var(--primary); margin-bottom: 0.8rem; }
+    .highlight-box { background: #eff6ff; border-left: 5px solid var(--secondary); padding: 1.5rem; border-radius: 12px; margin: 1.5rem 0; }
+    .activity-card { background: #fefce8; border: 1px dashed var(--accent); padding: 2rem; border-radius: 16px; }
 
-    .discussion-box { background: #eff6ff; border-left: 5px solid var(--secondary); padding: 2rem; border-radius: 12px; margin: 1.5rem 0; }
-    .highlight-box { background: #fef3c7; border-left: 5px solid var(--accent); padding: 1.5rem; border-radius: 12px; margin: 1.5rem 0; }
-    .highlight-box strong { color: var(--primary); }
-
-    .takeaway-box { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); padding: 2rem; border-radius: 12px; border-left: 5px solid #22c55e; }
-
-    /* TABLE STYLE */
-    .table-container { overflow-x: auto; margin: 1.5rem 0; }
-    table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; }
-    th { background: #f8fafc; color: var(--primary); text-align: left; padding: 1rem; border-bottom: 2px solid #e2e8f0; }
-    td { padding: 1rem; border-bottom: 1px solid #f1f5f9; color: var(--text-muted); }
-
-    /* NAVIGATION BUTTONS */
-    .session-nav { display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem; }
-    .nav-button { display: flex; align-items: center; gap: 0.5rem; padding: 1rem 1.5rem; background: var(--primary); color: var(--white); text-decoration: none; border-radius: 8px; transition: all 0.3s; font-weight: 500; }
+    /* BUTTONS */
+    .session-nav { display: flex; justify-content: space-between; margin-top: 3rem; }
+    .nav-button { display: flex; align-items: center; gap: 0.5rem; padding: 1rem 1.8rem; background: var(--primary); color: white; text-decoration: none; border-radius: 10px; transition: 0.3s; font-weight: 600; }
     .nav-button:hover { background: var(--secondary); transform: translateY(-2px); }
-
-    @media (max-width: 768px) { .sidebar { display: none; } .main-content { margin-left: 0; padding: 1.5rem; } }
   </style>
 </head>
 <body>
@@ -99,143 +54,105 @@
   <aside class="sidebar">
     <h2>M&C Strategy</h2>
     <a href="index.html" class="nav-item"><i class="fas fa-th-large"></i> Dashboard</a>
-    
     <div class="nav-section">
-      <div class="nav-section-title">Course Sessions</div>
+      <div class="nav-section-title">Course Roadmap</div>
       <a href="week1.html" class="nav-item"><i class="fas fa-bullhorn"></i> Session 1</a>
       <a href="week2.html" class="nav-item"><i class="fas fa-chart-line"></i> Session 2</a>
-      <a href="week3.html" class="nav-item"><i class="fas fa-users"></i> Session 3</a>
-      <a href="week4.html" class="nav-item active"><i class="fas fa-brain"></i> Session 4: Influences & Insights</a>
-      <a href="week5.html" class="nav-item"><i class="fas fa-crosshairs"></i> Session 5</a>
+      <a href="week3.html" class="nav-item"><i class="fas fa-sitemap"></i> Session 3</a>
+      <a href="week4.html" class="nav-item active"><i class="fas fa-palette"></i> Session 4: Identity</a>
+      <a href="week5.html" class="nav-item"><i class="fas fa-route"></i> Session 5</a>
       <a href="week6.html" class="nav-item"><i class="fas fa-chess-knight"></i> Session 6</a>
-      <a href="week7.html" class="nav-item"><i class="fas fa-share-nodes"></i> Session 7</a>
-      <a href="week8.html" class="nav-item"><i class="fas fa-award"></i> Session 8</a>
+      <a href="week7.html" class="nav-item"><i class="fas fa-comments"></i> Session 7</a>
+      <a href="week8.html" class="nav-item"><i class="fas fa-bullseye"></i> Session 8</a>
+      <a href="week9.html" class="nav-item"><i class="fas fa-layer-group"></i> Session 9</a>
+      <a href="week10.html" class="nav-item"><i class="fas fa-chart-bar"></i> Session 10</a>
+      <a href="final.html" class="nav-item"><i class="fas fa-award"></i> Final Presentation</a>
     </div>
   </aside>
 
   <main class="main-content">
-    
     <header class="header-section">
-      <div class="breadcrumb">Session 04 • Deciphering the Consumer Mind</div>
-      <h1>Influences & Insights of Consumer Behavior</h1>
+      <div class="breadcrumb">Module 04 • Visual Strategy</div>
+      <h1>Brand Identity & Visual Systems</h1>
     </header>
 
     <section class="content-card">
-      <h2><i class="fas fa-bullseye"></i> Session Objective</h2>
-      <ul>
-        <li>Identify key influences that shape consumer behavior</li>
-        <li>Understand conscious vs. unconscious factors in decision making</li>
-        <li>Translate behavior influences into actionable marketing insights</li>
-        <li>Analyze digital examples to explain consumer choices</li>
-      </ul>
+      <h2><i class="fas fa-eye"></i> Session Focus</h2>
+      <p>Transforming brand strategy into visual and sensory assets that work seamlessly across digital platforms, ensuring flexibility and psychological resonance.</p>
     </section>
 
     <section class="content-card">
-      <h2><i class="fas fa-lightbulb"></i> Influence vs. Insight</h2>
-      <div class="discussion-box">
-        <h3>Question: “If consumers say they care about price, why do they still buy expensive brands?”</h3>
-      </div>
-      <div class="comparison-grid">
-        <div class="comparison-box">
-          <h4>Influences</h4>
-          <p>The visible and invisible forces that affect behavior (Data tells you <strong>what</strong> happened).</p>
-        </div>
-        <div class="comparison-box">
-          <h4>Insights</h4>
-          <p>The deeper human truth behind the behavior (Insights explain <strong>why</strong> it happened).</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-card">
-      <h2><i class="fas fa-fingerprint"></i> Key Influences on Behavior</h2>
+      <h2><i class="fas fa-vector-square"></i> 1. Core Visual Elements</h2>
+      <p>Modern visual systems must prioritize accessibility and screen readability over static aesthetics.</p>
       
-      <h3>1. Psychological (Internal Forces)</h3>
-      
-      <ul>
-        <li><strong>Motivation:</strong> Solving emotional or social needs (e.g., Luxury = Status).</li>
-        <li><strong>Perception:</strong> How reality is interpreted. Marketing manages perception, not facts.</li>
-        <li><strong>Learning:</strong> One bad digital experience outweighs ten good ads.</li>
-      </ul>
-
-      <h3>2. Personal & Social</h3>
-      <div class="comparison-grid">
-        <div class="comparison-box" style="border-top-color: var(--accent);">
-          <h4>Personal</h4>
-          <p>Age, Income, and Lifestyle. People choose brands that reflect their identity.</p>
+      <div class="grid-3">
+        <div class="info-box">
+          <h3>Logo Systems</h3>
+          <p>Not just one logo, but a responsive set.</p>
+          <ul>
+            <li><i class="fas fa-mobile-alt"></i> App Avatars</li>
+            <li><i class="fas fa-check-circle"></i> Social Favicons</li>
+            <li><i class="fas fa-moon"></i> Dark Mode Adapts</li>
+          </ul>
         </div>
-        <div class="comparison-box" style="border-top-color: #22c55e;">
-          <h4>Social</h4>
-          <p>Family, Influencers, and Social Proof. People trust people more than brands.</p>
+        <div class="info-box">
+          <h3>Color Psychology</h3>
+          <p>Influencing trust and perceived quality.</p>
+          <ul>
+            <li><i class="fas fa-circle" style="color: #3b82f6;"></i> Blue: Trust & Stability</li>
+            <li><i class="fas fa-circle" style="color: #ef4444;"></i> Red: Energy & Urgency</li>
+            <li><i class="fas fa-circle" style="color: #22c55e;"></i> Green: Growth & Health</li>
+          </ul>
+        </div>
+        <div class="info-box">
+          <h3>Typography</h3>
+          <p>Communicating brand personality.</p>
+          <ul>
+            <li><i class="fas fa-font"></i> Serif: Traditional</li>
+            <li><i class="fas fa-font"></i> Sans: Modern/Clean</li>
+            <li><i class="fas fa-bolt"></i> Readability is Key</li>
+          </ul>
         </div>
       </div>
-
-      <h3>3. Cultural & Situational</h3>
-      <p><strong>Culture:</strong> Defines what is "normal" (e.g., Cash vs. Digital preferences).</p>
-      <p><strong>Situation:</strong> The same consumer decides differently based on mood, time pressure, or device used.</p>
+      
     </section>
 
     <section class="content-card">
-      <h2><i class="fas fa-search"></i> Defining the "Real" Insight</h2>
+      <h2><i class="fas fa-expand-arrows-alt"></i> 2. Digital Elasticity</h2>
+      <p>Digital Elasticity refers to a brand’s ability to adapt to different platforms and scale without losing its core identity.</p>
       <div class="highlight-box">
-        <strong>Insight:</strong> A human, emotional, and non-obvious truth that unlocks strategy.
+        <strong>Strategic Evolution: Guidelines Shift</strong>
+        <p style="margin-top: 10px;">Move from <strong>Static Consistency</strong> (Print) to <strong>Dynamic Coherence</strong> (Digital). Guidelines must now include motion rules, micro-interactions, and dark/light mode versions.</p>
       </div>
-      <div class="table-container">
-        <table>
-          <thead>
-            <tr>
-              <th>Observation (Not an Insight)</th>
-              <th>The Real Insight (The Why)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>"People like discounts."</td>
-              <td>"Discounts reduce the <strong>guilt</strong> of buying something non-essential."</td>
-            </tr>
-            <tr>
-              <td>"Consumers want fast apps."</td>
-              <td>"Speed is the primary digital signal for <strong>brand trust</strong>."</td>
-            </tr>
-            <tr>
-              <td>"Users read reviews."</td>
-              <td>"Consumers look for <strong>reassurance</strong> against their fear of making a mistake."</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      
     </section>
 
-    <section class="content-card">
-      <h2><i class="fas fa-tasks"></i> Class Activity: Insight Discovery</h2>
-      <div class="discussion-box">
-        <h3>The Insight Formula:</h3>
-        <p>“Consumers want <strong>[Goal]</strong> but feel <strong>[Tension/Fear]</strong>, so they choose brands that <strong>[Solution]</strong>.”</p>
-      </div>
-      <p>Pick a category (Food Delivery, Banking, or Streaming) and identify one tension users feel that a brand can solve.</p>
-    </section>
-
-    <section class="content-card">
-      <h2><i class="fas fa-check-double"></i> Key Takeaways</h2>
-      <div class="takeaway-box">
-        <ul style="color: var(--text-main);">
-          <li>Decisions are emotional first, rational second.</li>
-          <li>Influences explain behavior; insights unlock the strategic solution.</li>
-          <li>Digital environments amplify the impact of social proof and speed.</li>
-          <li>The same consumer is a "different person" depending on the situation.</li>
+    <section class="content-card activity-card">
+      <h2><i class="fas fa-paint-brush"></i> Activity: The Mood Board (20 mins)</h2>
+      <p><strong>Brief:</strong> Create a mini mood board for a personal brand using Canva or Pinterest.</p>
+      <div style="margin-top: 1.5rem; background: rgba(255,255,255,0.6); padding: 1.5rem; border-radius: 12px;">
+        <h4>Constraints & Requirements:</h4>
+        <ul style="margin-top: 10px; padding-left: 20px;">
+          <li>Maximum 3 colors and 2 fonts.</li>
+          <li>Explain the psychological reasoning behind choices.</li>
+          <li>Demonstrate how the visuals reflect your personal positioning.</li>
         </ul>
       </div>
     </section>
 
-    <div class="session-nav">
-      <a href="week3.html" class="nav-button">
-        <i class="fas fa-arrow-left"></i> Previous Session
-      </a>
-      <a href="week5.html" class="nav-button">
-        Next Session <i class="fas fa-arrow-right"></i>
-      </a>
-    </div>
+    <section class="content-card" style="background: var(--primary); color: white;">
+      <h2 style="color: white;"><i class="fas fa-key"></i> Key Takeaways</h2>
+      <ul style="list-style: none; padding-top: 10px;">
+        <li style="margin-bottom: 10px;"><i class="fas fa-star" style="margin-right: 10px;"></i> Brand architecture shapes digital clarity and scalability.</li>
+        <li style="margin-bottom: 10px;"><i class="fas fa-star" style="margin-right: 10px;"></i> Visual identity is strategic communication, not decoration.</li>
+        <li><i class="fas fa-star" style="margin-right: 10px;"></i> Digital-first branding requires flexibility and psychological insight.</li>
+      </ul>
+    </section>
 
+    <div class="session-nav">
+      <a href="week3.html" class="nav-button"><i class="fas fa-arrow-left"></i> Session 3</a>
+      <a href="week5.html" class="nav-button">Session 5 <i class="fas fa-arrow-right"></i></a>
+    </div>
   </main>
 
 </body>
